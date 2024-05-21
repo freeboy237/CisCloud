@@ -1,18 +1,22 @@
 <?php
 // Informations d'identification
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'kdrive');
- 
+//define('DB_SERVER', 'localhost');
+//define('DB_USERNAME', 'root');
+//define('DB_PASSWORD', '');
+//define('DB_NAME', 'kdrive');
+ //getenv('DB_SERVER');
+// getenv('DB_USERNAME');
+// getenv('DB_PASSWORD');
+ //getenv('DB_SERVER');
+ //var_dump(getenv('DB_SERVER'));
 // Connexion à la base de données MySQL 
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = mysqli_connect( getenv('DB_SERVER'), getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
  
 // Vérifier la connexion
 if($conn === false){
     die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
 }
-$connx = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$connx = mysqli_connect( getenv('DB_SERVER'),  getenv('DB_USERNAME'), getenv('DB_PASSWORD'), getenv('DB_NAME'));
  
 // Vérifier la connexion
 if($connx === false){
